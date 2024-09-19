@@ -1,39 +1,27 @@
 #include<stdio.h>
 int main()
 {
-    int n,num,max=0,min=0;
-    printf("enter total number u want to enter: ");
-    scanf("%d",&n);
-    for(int i=1;i<=n;i++)
+    int terms,min,max,a,num;
+    printf("enter number of numbers to be entered");
+    scanf("%d",&terms);
+    printf("enter the number");
+    scanf("%d",&num);
+    max=min=num;
+    while(terms>1)
     {
-        printf("\n enter number: ");
-        scanf("%d",&num);
-
-        if(num>max)
+        printf("enter another number");
+        scanf("%d",&a);
+        if(a>max)
         {
-            max=num;
-            if(max>=min){
-                printf("\n min=%d",min);
-            }
-            else if(min>max){
-                printf("\n min=%d",max);
-            }
-            printf("\n max=%d",max);
-           
-            
-        }else if(num<max)
-        {
-            if(num>min)
-            {
-                printf("\n min=%d",min);
-            }
-            else if(min>num)
-            {
-                printf("\n min=%d",num);
-            }
-            printf("\n max=%d",max);
+            max=a;
         }
-
+        if(a<min)
+        {
+            min=a;
+        }
+        
+        terms-=1;
     }
+    printf("max and min numbers are %d and %d respectively",max,min);
     return 0;
 }
