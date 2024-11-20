@@ -1,21 +1,53 @@
+//60. PROGRAM TO SORT (SELECTION SORT) AN ARRAY. 
 
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int sum=0,b, n;
-    printf("enter num\n");
+int main()
+{
+    int n;
+    printf("Enter the number of elements to input:");
     scanf("%d",&n);
-    for(;n!=0;)
+
+    int arr[n];
+    printf("Enter the Array which is to be sorted\n");
+    for(int i=0;i<n;i++)
     {
-        b=n%10;
-        sum+=b;
-        n=n/10;
-        if(sum>10)
+        printf("Enter number %d:",i+1);
+        scanf("%d",&arr[i]);
+    }
+
+    printf("Unsorted Array:\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+
+    for(int i=0;i<n-1;i++)
+    {
+        int min_index = i;
+
+        for(int j=i+1;j<n;j++)
         {
-            n=sum;
-            sum=0;
+            if(arr[j]<arr[min_index])
+            {
+                min_index=j;
+            }
+        }
+
+        if(min_index != i)
+        {
+            int temp = arr[i];
+            arr[i] = arr[min_index];
+            arr[min_index] = temp;
         }
     }
-    printf("sum till single digit is: %d",sum);
-    return 0;
+
+    printf("Sorted Array:\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    
+
+    
 }
