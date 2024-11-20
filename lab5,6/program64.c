@@ -2,6 +2,7 @@
 int main()
 {
     int r[3][3],sum[3];
+    sum[1]=0;
     printf("enter elements of matrix\n");
     for(int i=0;i<3;i++)
     {
