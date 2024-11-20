@@ -1,20 +1,21 @@
-#include<stdio.h>
-void main(){
-    int n,sum,sum2;
-    printf("enter number: ");
+
+#include <stdio.h>
+
+int main() {
+    int sum=0,b, n;
+    printf("enter num\n");
     scanf("%d",&n);
-    while(n!=0){
-            sum+=(n%10);
-            n/=10;
+    for(;n!=0;)
+    {
+        b=n%10;
+        sum+=b;
+        n=n/10;
+        if(sum>10)
+        {
+            n=sum;
+            sum=0;
+        }
     }
-    if(sum>=10){
-        int z=sum;
-        while(z!=0){
-            sum2+=(z%10);
-            z/=10;
-    }
-    printf("\n sum till single digit is=%d",sum2);
-}else{
-    printf("\n sum till single digit is=%d",sum2);
-}
+    printf("sum till single digit is: %d",sum);
+    return 0;
 }
